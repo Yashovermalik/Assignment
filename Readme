@@ -1,1 +1,38 @@
+INTRODUCTION
+A conversational agent, or chatbot, is being used in this project to communicate with users and gather particular data. Utilising the Hugging Face transformers library, the chatbot is designed to function in a Google Colab setting.
+
+SETUP
+Establish an Interactive Python Environment in the Cloud with Google Colab: Launch a new Python 3 notebook in Google Colab.
+Installing Libraries: To install the required libraries, run the following commandS:
+!pip install transformers pandas
+This ensures that the project has access to the required tools for natural language processing and data handling.
+
+IMPLEMENTATION OVERVIEW
+SETUP
+1.chatbot class
+The Chatbot class is in charge of specifying how each agent behaves within the system. Every agent is given a role (Name, Email, etc.) and uses the facebook/bart-large pre-trained language model to provide responses in response to user input.
+2. ChatSession class
+The ChatSession class controls the data collecting procedure and coordinates the discussion flow. It maintains track of the current chatbot's index and includes a list of chatbots with particular responsibilities (like Name and Email).
+
+
+Data Collection Procedure: Starting a Conversation: The chatbot asks the user for their name and extends a greeting. After that, the user's response is saved.
+Email Collection: After requesting the user's email address, the chatbot moves on. The bot strikes up a conversation to create a cosier atmosphere if the person declines. After the small conversation period, the email question is brought up again.
+Phone Number, Complete Address, Date of Birth, and Education: The chatbot asks for the user's phone number, full address, date of birth, and highest degree of education completed after gathering their email address. Every bit of data is kept in the appropriate place.
+3. Running the Chat Session
+chat_session = ChatSession()
+chat_session.start_conversation()
+chat_session.save_user_details()
+
+User Manual
+
+Starting the Conversation: A kind hello and a request for the user's name open the discussion. This first action establishes a friendly atmosphere for the conversation.
+Email Collection: Next, the user's email address will be requested by the chatbot. In the event that the user declines, the chatbot strikes up a conversation to put them at ease before requesting the email address once more.
+Further Details: The chatbot then requests the user's phone number, full address, birthdate, and highest level of education attained. All of these procedures contribute to the collection of thorough user data.
+Data Storage: All gathered data is stored in a user_details.csv CSV file, which is accessible at any time.
+
+
+
+
+
+
 
